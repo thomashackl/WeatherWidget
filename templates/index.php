@@ -15,5 +15,5 @@
     <?= $this->render_partial('_weather.php', array('title' => _('Aktuell'), 'weather' => $data)); ?>
     <?= $this->render_partial('_weather.php', array('title' => _('Heute'), 'weather' => $forecast->list[0])); ?>
     <?= $this->render_partial('_weather.php', array('title' => _('Morgen'), 'weather' => $forecast->list[1])); ?>
-    <?= $this->render_partial('_weather.php', array('title' => _('Übermorgen'), 'weather' => $forecast->list[2])); ?>
+    <?= $this->render_partial('_weather.php', array('title' => _('Ãœbermorgen'), 'weather' => $forecast->list[2])); ?>
 </div>
