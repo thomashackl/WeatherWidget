@@ -1,0 +1,19 @@
+#: ../templates/index.php:15
+msgid "Aktuell"
+msgstr "Current"
+
+#: ../templates/index.php:16
+msgid "Heute"
+msgstr "Today"
+
+#: ../templates/index.php:17
+msgid "Morgen"
+msgstr "Tomorrow"
+
+#: ../templates/index.php:18
+msgid "Übermorgen"
+msgstr "Day after tomorrow"
+
+#: ../WeatherWidgetPlugin.class.php:71
+msgid "Wetter in"
+msgstr "Weather in"

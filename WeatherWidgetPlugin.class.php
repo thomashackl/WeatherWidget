@@ -7,6 +7,8 @@
  *
  * @author  Florian Bieringer <florian.bieringer@uni-passau.de>
  * @version 1.0
+ * @author Anna Kirpichnikova <a.Kirpichnikova@stud.hs-wismar.de> and Jakob Diel <jakob.diel@hs-wismar.de>
+ * @version 1.1
  */
 class WeatherWidgetPlugin extends StudIPPlugin implements PortalPlugin {
 
@@ -14,6 +16,7 @@ class WeatherWidgetPlugin extends StudIPPlugin implements PortalPlugin {
     const URL = "http://api.openweathermap.org/data/2.5/weather?q=";
     const FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?q=";
     const LOCATION = "passau";
+    const LANGUAGE = "&lang=";
     const CACHENAME = "plugin/weatherwidget";
 
     public static $weather;
@@ -30,7 +33,7 @@ class WeatherWidgetPlugin extends StudIPPlugin implements PortalPlugin {
         $cache = StudipCacheFactory::getCache();
         if (!$data = $cache->read(self::CACHENAME . "/current")) {
             ini_set('default_socket_timeout', 2);
-            $handle = fopen(self::URL . self::LOCATION . '&APPID=' . self::APIKEY, "r");
+            $handle = fopen(self::URL . self::LOCATION . self::LANGUAGE . trim($_SESSION['_language'], '_DEN') . '&APPID=' . self::APIKEY, "r");
             if ($handle) {
                 $data = fgets($handle);
             }
@@ -43,6 +46,7 @@ class WeatherWidgetPlugin extends StudIPPlugin implements PortalPlugin {
     }
 
     public function getForecast() {
+        bindtextdomain('wetter', $this->getPluginPath()."/locale");
 
         // Check class cache
         if (self::$forecast != null) {
@@ -53,7 +57,7 @@ class WeatherWidgetPlugin extends StudIPPlugin implements PortalPlugin {
         $cache = StudipCacheFactory::getCache();
         if (!$data = $cache->read(self::CACHENAME . "/forecast")) {
             ini_set('default_socket_timeout', 2);
-            $handle = fopen(self::FORECAST_URL . self::LOCATION . '&APPID=' . self::APIKEY, "r");
+            $handle = fopen(self::FORECAST_URL . self::LOCATION . self::LANGUAGE . trim($_SESSION['_language'], '_DEN') . '&APPID=' . self::APIKEY, "r");
             if ($handle) {
                 $data = fgets($handle);
             }
@@ -66,7 +70,7 @@ class WeatherWidgetPlugin extends StudIPPlugin implements PortalPlugin {
     }
 
     public function getPluginName() {
-        return _('Wetter in') . ' ' . self::getWeather()->name;
+        return dgettext('wetter','Wetter in') . ' ' . self::getWeather()->name;
     }
 
     public function getPortalTemplate() {

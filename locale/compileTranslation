@@ -1,0 +1,14 @@
+#!/bin/sh
+
+#
+#  STEP 2:
+#  convert all wetter message strings into a binary format
+#
+
+LOCALE_RELATIVE_PATH="."
+
+for language in en
+do
+	test -f "$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.mo" && mv "$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.mo" "$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.mo.old"
+	msgfmt "$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.po" --output-file="$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.mo"
+done

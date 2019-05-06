@@ -1,0 +1,17 @@
+#!/bin/sh
+
+#
+#  STEP 1:
+#  extract all wetter message strings and merge them with the existing translations
+#
+
+LOCALE_RELATIVE_PATH="."
+TRANSLATIONFILES_RELAVITVE_PATHS="../templates ../WeatherWidgetPlugin.class.php"
+
+for language in en
+do
+	test -f "$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.po" && mv "$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.po" "$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.po.old"
+	> "$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.pot"
+	find $TRANSLATIONFILES_RELAVITVE_PATHS \( -iname "*.php" -o -iname "*.ihtml" \) | xargs xgettext --from-code=utf-8 -j -n --language=PHP -o "$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.pot"
+	test -f "$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.po.old" && msgmerge "$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.po.old" "$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.pot" --output-file="$LOCALE_RELATIVE_PATH/$language/LC_MESSAGES/wetter.po"
+done

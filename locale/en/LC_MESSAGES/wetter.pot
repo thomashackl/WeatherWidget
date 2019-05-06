@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Jakob Diel jakobdiel@gmail.com, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-03 09:43+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Jakob Diel jakobdiel@gmail.com\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../templates/index.php:15
+msgid "Aktuell"
+msgstr "Current"
+
+#: ../templates/index.php:16
+msgid "Heute"
+msgstr "Today"
+
+#: ../templates/index.php:17
+msgid "Morgen"
+msgstr "Tomorrow"
+
+#: ../templates/index.php:18
+msgid "Übermorgen"
+msgstr "Day after tomorrow"
+
+#: ../WeatherWidgetPlugin.class.php:71
+msgid "Wetter in"
+msgstr "Weather in"
