@@ -4,12 +4,20 @@
 <style>
     div.weather {
         text-align: center;
-        padding: 4px;
+        padding: 10px;
         width: 100%;
     }
     div.weather p,div.weather h3 {
         margin: 0px;
     }
+    @media screen and (max-width: 600px) {
+    div.weather:first-child {
+        display: none;
+    }
+    div.weather:last-child {
+        display: none;
+    }
+}
 </style>
 <div style="display: flex">
     <?= $this->render_partial('_weather.php', array('title' => dgettext('wetter','Aktuell'), 'weather' => $data)); ?>

@@ -7,7 +7,7 @@
  *
  * @author  Florian Bieringer <florian.bieringer@uni-passau.de>
  * @version 1.0
- * @author Anna Kirpichnikova <a.Kirpichnikova@stud.hs-wismar.de> and Jakob Diel <jakob.diel@hs-wismar.de>
+ * @author Anna Kirpichnikova <a.kirpichnikova@stud.hs-wismar.de> and Jakob Diel <jakob.diel@hs-wismar.de>
  * @version 1.1
  */
 class WeatherWidgetPlugin extends StudIPPlugin implements PortalPlugin {
@@ -15,7 +15,7 @@ class WeatherWidgetPlugin extends StudIPPlugin implements PortalPlugin {
     const APIKEY = '02f7c0bdaae418cfad0f061298b3f8c3';
     const URL = "http://api.openweathermap.org/data/2.5/weather?q=";
     const FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?q=";
-    const LOCATION = "passau";
+    const LOCATION = "wismar";
     const LANGUAGE = "&lang=";
     const CACHENAME = "plugin/weatherwidget";
 
@@ -70,7 +70,7 @@ class WeatherWidgetPlugin extends StudIPPlugin implements PortalPlugin {
     }
 
     public function getPluginName() {
-        return dgettext('wetter','Wetter in') . ' ' . self::getWeather()->name;
+        return dgettext('wetter','Wetter in Wismar')/*self::getWeather()->name*/;
     }
 
     public function getPortalTemplate() {
