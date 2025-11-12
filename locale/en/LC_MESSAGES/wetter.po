@@ -1,3 +1,19 @@
+# Jakob Diel jakobdiel@gmail.com, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-03 09:43+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Jakob Diel jakobdiel@gmail.com\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
 #: ../templates/index.php:15
 msgid "Aktuell"
 msgstr "Current"
@@ -17,3 +33,9 @@ msgstr "Day after tomorrow"
 #: ../WeatherWidgetPlugin.class.php:71
 msgid "Wetter in"
 msgstr "Weather in"
+
+msgid "Wetter in Wismar"
+msgstr "Weather in Wismar"
+
+msgid "Dieses Widget zeigt das aktuelle Wetter sowie eine Wettervorhersage für die nächsten Tage in Wismar an."
+msgstr "This widget shows the current weather and a forecast for the next days in Wismar."
